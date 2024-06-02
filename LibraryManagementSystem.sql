@@ -23,7 +23,8 @@ select *from Branch;
  values(7,10012,'Delhi',96385214);
    insert into Branch (Branch_no,Manager_Id,Branch_address,Contact_no)
  values(8,20012,'Mysore',812936569);
- select *from Branch;
+ 
+select *from Branch;
  
  create table Employee(  
  Emp_Id int PRIMARY KEY,
@@ -89,7 +90,6 @@ Customer_Id int  PRIMARY KEY,
 Customer_name varchar(25), 
 Customer_address varchar(30), 
 Reg_date date);
-drop table Customer;
  insert into Customer(Customer_Id,Customer_name,Customer_address,Reg_date)
  values(1,'Zoya','Rose Villa p25','2021-08-29');
   insert into Customer(Customer_Id,Customer_name,Customer_address,Reg_date)
@@ -110,7 +110,6 @@ drop table Customer;
  values(9,'Karan','Summer Villa','2024-04-5');
   insert into Customer(Customer_Id,Customer_name,Customer_address,Reg_date)
  values(10,'Anil','LandMark B12','2024-05-3');
- 
  select * from Customer;
  
  create table IssueStatus(
@@ -120,12 +119,8 @@ Issued_book_name varchar(30),
 Issue_date date,
 Isbn_book int,
 foreign key(Issued_cust)  references Customer(customer_id) on delete cascade,
-foreign key(Isbn_book)  references Books(ISBN) on delete cascade
- );
-  select * from IssueStatus;
-  
-  drop table IssueStatus;
- SET FOREIGN_KEY_CHECKS=0;
+foreign key(Isbn_book)  references Books(ISBN) on delete cascade);
+ 
  insert into IssueStatus values(101,15,'Dear Life','2022-01-01',1014);
  insert into IssueStatus values(102,12,'Wings of Fire','2023-02-01',1015);
  insert into IssueStatus values(103,7,'Dune','2021-12-20',1009);
@@ -135,14 +130,13 @@ foreign key(Isbn_book)  references Books(ISBN) on delete cascade
  insert into IssueStatus values(107,5,'Hyperion','2023-06-2',1101);
  select* from IssueStatus;
  
-   create table ReturnStatus(
+create table ReturnStatus(
 Return_Id int PRIMARY KEY,
 Return_cust int,
 Return_book_name  varchar(30),
 Return_date date, 
 Isbn_book2 int,
-foreign key (Isbn_book2) references Books(ISBN) on delete cascade
-  );
+foreign key (Isbn_book2) references Books(ISBN) on delete cascade );
   drop table ReturnStatus;
  insert into ReturnStatus values(01,20,'The Kite Runner','2023-04-15',1101);
  insert into ReturnStatus values(02,15,'Dear Life','2023-01-15',1014);
@@ -151,14 +145,7 @@ foreign key (Isbn_book2) references Books(ISBN) on delete cascade
  select * from ReturnStatus;
  
  
- 
- 
- 
- 
- 
- 
- 
-
+/*Queries*/
 
  -- 1. Retrieve the book title, category, and rental price of all available books. 
  SELECT Book_title, Category, Rental_Price  FROM books WHERE Status = 'Yes';
