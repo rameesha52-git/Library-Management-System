@@ -6,7 +6,7 @@ The library management system being developed for this project makes it possible
 create database named library
 
 # Tables in Database
-## 1. Branch :Track Book details such as book_title,category,Author,publisher
+#### 1. Branch :Track Book details such as book_title,category,Author,publisher
 2. Employee 
 3. Books
 4. Customer
