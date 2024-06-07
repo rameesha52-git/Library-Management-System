@@ -1,5 +1,8 @@
+/* Create Database */
 create database library;
 use library;
+
+/* create Table 'Branch' */  
 create table Branch(
 Branch_no int primary key,
  Manager_Id  int,
@@ -7,6 +10,7 @@ Branch_address varchar(30),
 Contact_no int);
 select *from Branch;
 
+/* values insert */
  insert into Branch (Branch_no,Manager_Id,Branch_address,Contact_no)
  values(1,1001,'Ernamkulam',965687423);
   insert into Branch (Branch_no,Manager_Id,Branch_address,Contact_no)
@@ -25,7 +29,8 @@ select *from Branch;
  values(8,20012,'Mysore',812936569);
  
 select *from Branch;
- 
+
+ /* create table Employee */
  create table Employee(  
  Emp_Id int PRIMARY KEY,
  Emp_name Varchar(50),
